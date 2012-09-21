@@ -52,4 +52,25 @@ webxml {
 	//	<param-name>port</param-name>
 	//	<param-value>6001</param-value>
 	//  </context-param>
+	
+	// ------------------------------------------------
+	// Example for resource-refs
+	// ------------------------------------------------
+	// this example will create the following XML part
+	// resourcerefs = [ 
+	//	[
+	//		'description':'The Datasource I need',
+	//		'res-ref-name':'jdbc/DataSource',
+	//		'res-type':'javax.sql.DataSource',
+	//		'res-auth':'Container' 
+	//	] 
+	// ]
+	//
+	//<resource-ref>
+	//	<description>The Datasource I need</description>
+	//	<res-ref-name>jdbc/DataSource</res-ref-name>
+	//	<res-type>javax.sql.DataSource</res-type>
+	//	<res-auth>Container</res-auth>
+	//</resource-ref>
+	
 }

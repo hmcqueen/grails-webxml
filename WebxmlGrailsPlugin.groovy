@@ -39,7 +39,7 @@ class WebxmlGrailsPlugin {
 	def author = 'Roger Cass'
 	def authorEmail = 'roger.cass@byu.net'
 	def title = 'web.xml plugin'
-	def description = 'Add additional features to your web.xml, such as Filters, Config Listeners or Context Parameter definitions'
+	def description = 'Add additional features to your web.xml, such as Filters, Config Listeners, Context Parameter definitions, or Resourse Refs'
 	def documentation = 'http://grails.org/plugin/webxml'
 
 	def license = 'APACHE'
@@ -50,6 +50,7 @@ class WebxmlGrailsPlugin {
 		[name: 'Bob Schulze',    email: 'al.lias@gmx.de'],
 		[name: 'Burt Beckwith',  email: 'beckwithb@vmware.com'],
 		[name: 'Stefano Gualdi', email: 'stefano.gualdi@gmail.com']
+		[name: 'Harvey McQueen', email: 'hmcqueen@gmail.com']
 	]
 
 	def doWithWebDescriptor = { xml ->
@@ -113,6 +114,24 @@ class WebxmlGrailsPlugin {
 			contextParam[contextParam.size() - 1] + {
 				'session-config'{
 					'session-timeout'(config.sessionConfig.sessionTimeout)
+				}
+			}
+		}
+		
+		// resource-refs
+		if (config.resourcerefs) {
+			def nodes = xml.'resource-ref'
+			if(nodes.isEmpty()) {
+				nodes = xml.'jsp-config'
+			}
+			config.resourcerefs.each {
+				def ref = it 
+				nodes[nodes.size() - 1] + {
+					'resource-ref'{
+						ref.each { String name, String value ->
+							"$name"(value)
+						}
+					}
 				}
 			}
 		}
