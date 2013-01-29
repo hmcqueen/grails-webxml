@@ -34,7 +34,7 @@ class WebxmlGrailsPlugin {
 
 	private Logger log = LoggerFactory.getLogger('grails.plugin.webxml.WebxmlGrailsPlugin')
 
-	def version = '1.4.1'
+	def version = '1.5'
 	def grailsVersion = '1.2 > *'
 	def author = 'Roger Cass'
 	def authorEmail = 'roger.cass@byu.net'
@@ -49,7 +49,7 @@ class WebxmlGrailsPlugin {
 		[name: 'Eric Pederson',  email: 'ericacm@gmail.com'],
 		[name: 'Bob Schulze',    email: 'al.lias@gmx.de'],
 		[name: 'Burt Beckwith',  email: 'beckwithb@vmware.com'],
-		[name: 'Stefano Gualdi', email: 'stefano.gualdi@gmail.com']
+		[name: 'Stefano Gualdi', email: 'stefano.gualdi@gmail.com'],
 		[name: 'Harvey McQueen', email: 'hmcqueen@gmail.com']
 	]
 
